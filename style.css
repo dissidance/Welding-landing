@@ -14,3 +14,32 @@ header{gap:28px}.eyebrow{font-size:18px;color:var(--paper)}.hero-copy>p,.section
 .hero{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr)}.drawing{min-width:0}.hero-foot{gap:12px}.section-intro{gap:30px}
 @media(max-width:1100px){.header-phone{display:block}.brand{font-size:18px}header{gap:22px}nav{margin-left:0}.hero{grid-template-columns:1fr}.drawing{width:100%;max-width:780px;justify-self:center}.hero-copy{max-width:780px}.hero-copy h1{font-size:clamp(64px,8vw,100px)}.hero-foot{margin-top:28px}}
 @media(max-width:700px){.brand{font-size:16px}.header-phone{font-size:18px}nav{font-size:17px;gap:14px}.experience{gap:16px;padding:14px 18px}.experience strong{font-size:84px}.experience span{font-size:28px}.eyebrow{font-size:16px}.drawing-top,.drawing-bottom,.drawing button{font-size:16px}.drawing-top span:last-child{display:none}.spec-strip{font-size:16px;justify-content:flex-start;gap:14px}.hero-copy h1{font-size:clamp(52px,12vw,76px)}.drawing svg text{font-size:30px}.hero-copy>p,.about p{font-size:18px}.contact-note{font-size:16px}.email{font-size:17px}footer{font-size:16px}}
+
+/* One shared 22-second assembly and welding cycle. */
+.drawing svg{overflow:hidden}
+.assembly-table{animation:assemble-table 22s infinite both}
+.assembly-frame{animation:assemble-frame 22s infinite both}
+.weld-head{animation:assemble-and-weld 22s infinite both}
+.assembly-guides,.assembly-labels{animation:show-guides 22s infinite both}
+.arc{animation:arc-cycle 22s infinite both,flicker .2s infinite alternate}
+.sparks{animation:arc-cycle 22s infinite both,spark .35s infinite alternate}
+.seam{animation:seam-cycle 22s infinite both;stroke-dasharray:3 4}
+.cycle-stage{display:none;grid-area:1/1}
+.drawing-bottom>span{display:grid;grid-template-columns:auto 1fr;align-items:center}
+.drawing-bottom>span>.status-dot{grid-column:1;grid-row:1}
+.cycle-stage{grid-column:2;grid-row:1}
+.stage-table,.stage-frame,.stage-head,.stage-weld{display:block;animation:stage-table 22s infinite both}
+.stage-frame{animation-name:stage-frame}.stage-head{animation-name:stage-head}.stage-weld{animation-name:stage-weld}
+.paused .assembly-table,.paused .assembly-frame,.paused .assembly-guides,.paused .assembly-labels,.paused .seam,.paused .cycle-stage{animation-play-state:paused}
+@keyframes assemble-table{0%{opacity:0;transform:translateY(180px)}4%{opacity:1}14%,94%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(100px)}}
+@keyframes assemble-frame{0%,14%{opacity:0;transform:translateY(-220px)}18%{opacity:1}32%,94%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(-140px)}}
+@keyframes assemble-and-weld{0%,32%{opacity:0;transform:translate(210px,-80px)}36%{opacity:1}47%,52%{opacity:1;transform:translate(-60px,0)}67%{opacity:1;transform:translate(100px,0)}82%,94%{opacity:1;transform:translate(-60px,0)}100%{opacity:0;transform:translate(210px,-80px)}}
+@keyframes show-guides{0%,43%{opacity:0}50%,94%{opacity:1}100%{opacity:0}}
+@keyframes arc-cycle{0%,51%,85%,100%{opacity:0}53%,83%{opacity:1}}
+@keyframes seam-cycle{0%,52%{opacity:0;stroke-dashoffset:160}60%{opacity:.6}82%,94%{opacity:1;stroke-dashoffset:0}100%{opacity:0}}
+@keyframes stage-table{0%,14%{opacity:1}15%,100%{opacity:0}}
+@keyframes stage-frame{0%,14%,33%,100%{opacity:0}15%,32%{opacity:1}}
+@keyframes stage-head{0%,32%,52%,100%{opacity:0}33%,51%{opacity:1}}
+@keyframes stage-weld{0%,51%,100%{opacity:0}52%,99%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.stage-table,.stage-frame,.stage-head,.stage-weld{display:none}.stage-static{display:block}.arc,.sparks{opacity:0}.assembly-table,.assembly-frame,.weld-head{transform:none;opacity:1}}
+.arc{animation:flicker .2s infinite alternate}.sparks{animation:spark .35s infinite alternate}.welding-effects{animation:arc-cycle 22s infinite both}.paused .welding-effects{animation-play-state:paused}@media(prefers-reduced-motion:reduce){.welding-effects{opacity:0}}
