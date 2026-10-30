@@ -2,7 +2,7 @@
 
 Лендинг ООО «НТЦ Автоматизированная сварка»: сборка, настройка и подключение сварочных аппаратов.
 
-Сайт: https://ntc-welding-engineering.new-dog-0272.chatgpt.site
+Сайт: https://dissidance.github.io/Welding-landing/
 
 ## Исходники
 
