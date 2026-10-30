@@ -14,38 +14,3 @@ header{gap:28px}.eyebrow{font-size:18px;color:var(--paper)}.hero-copy>p,.section
 .hero{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr)}.drawing{min-width:0}.hero-foot{gap:12px}.section-intro{gap:30px}
 @media(max-width:1100px){.header-phone{display:block}.brand{font-size:18px}header{gap:22px}nav{margin-left:0}.hero{grid-template-columns:1fr}.drawing{width:100%;max-width:780px;justify-self:center}.hero-copy{max-width:780px}.hero-copy h1{font-size:clamp(64px,8vw,100px)}.hero-foot{margin-top:28px}}
 @media(max-width:700px){.brand{font-size:16px}.header-phone{font-size:18px}nav{font-size:17px;gap:14px}.experience{gap:16px;padding:14px 18px}.experience strong{font-size:84px}.experience span{font-size:28px}.eyebrow{font-size:16px}.drawing-top,.drawing-bottom,.drawing button{font-size:16px}.drawing-top span:last-child{display:none}.spec-strip{font-size:16px;justify-content:flex-start;gap:14px}.hero-copy h1{font-size:clamp(52px,12vw,76px)}.drawing svg text{font-size:30px}.hero-copy>p,.about p{font-size:18px}.contact-note{font-size:16px}.email{font-size:17px}footer{font-size:16px}}
-
-
-/* 15 s: supports 0–1, table 1–2, posts 2–3, rails 3–4,
-   torch 4–5, assembled pause 5–6.5, welding 6.5–13.5, reset 13.5–15. */
-.drawing svg{overflow:hidden}
-.assembly-supports{animation:detail-supports 15s linear infinite both}
-.assembly-table{animation:detail-table 15s linear infinite both}
-.assembly-posts{animation:detail-posts 15s linear infinite both}
-.assembly-rails{animation:detail-rails 15s linear infinite both}
-.weld-head{animation:detail-torch 15s linear infinite both}
-.assembly-guides,.assembly-labels{animation:detail-guides 15s linear infinite both}
-.welding-effects{animation:detail-weld 15s linear infinite both}
-.arc{animation:flicker .2s infinite alternate}.sparks{animation:spark .35s infinite alternate}
-.seam{animation:detail-seam 15s linear infinite both}
-.drawing-bottom>span{display:grid;grid-template-columns:auto 1fr;align-items:center}
-.drawing-bottom>span>.status-dot{grid-column:1;grid-row:1}
-.cycle-stage{display:block;grid-column:2;grid-row:1;opacity:0;animation-duration:15s;animation-iteration-count:infinite;animation-fill-mode:both;animation-timing-function:steps(1,end)}
-.stage-supports{animation-name:label-supports}.stage-table{animation-name:label-table}.stage-posts{animation-name:label-posts}.stage-rails{animation-name:label-rails}.stage-head{animation-name:label-head}.stage-ready{animation-name:label-ready}.stage-weld{animation-name:label-weld}.stage-static{display:none}
-.paused .assembly-supports,.paused .assembly-table,.paused .assembly-posts,.paused .assembly-rails,.paused .assembly-guides,.paused .assembly-labels,.paused .welding-effects,.paused .seam,.paused .cycle-stage{animation-play-state:paused}
-@keyframes detail-supports{0%{opacity:0;transform:translateY(100px)}6.667%,94%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(100px)}}
-@keyframes detail-table{0%,6.667%{opacity:0;transform:translateY(-130px)}13.333%,94%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(-80px)}}
-@keyframes detail-posts{0%,13.333%{opacity:0;transform:translateX(-130px)}20%,94%{opacity:1;transform:translateX(0)}100%{opacity:0;transform:translateX(-100px)}}
-@keyframes detail-rails{0%,20%{opacity:0;transform:translateY(-170px)}26.667%,94%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(-100px)}}
-@keyframes detail-torch{0%,26.667%{opacity:0;transform:translate(180px,-100px)}33.333%,43.333%{opacity:1;transform:translate(-60px,0)}66.667%{opacity:1;transform:translate(100px,0)}90%,94%{opacity:1;transform:translate(-60px,0)}100%{opacity:0;transform:translate(180px,-100px)}}
-@keyframes detail-guides{0%,31%{opacity:0}33.333%,94%{opacity:1}100%{opacity:0}}
-@keyframes detail-weld{0%,43.333%{opacity:0}44%,89%{opacity:1}90%,100%{opacity:0}}
-@keyframes detail-seam{0%,43.333%{opacity:0}55%{opacity:.5}90%,94%{opacity:1}100%{opacity:0}}
-@keyframes label-supports{0%{opacity:1}6.667%{opacity:0}}
-@keyframes label-table{0%{opacity:0}6.667%{opacity:1}13.333%{opacity:0}}
-@keyframes label-posts{0%{opacity:0}13.333%{opacity:1}20%{opacity:0}}
-@keyframes label-rails{0%{opacity:0}20%{opacity:1}26.667%{opacity:0}}
-@keyframes label-head{0%{opacity:0}26.667%{opacity:1}33.333%{opacity:0}}
-@keyframes label-ready{0%{opacity:0}33.333%{opacity:1}43.333%{opacity:0}}
-@keyframes label-weld{0%{opacity:0}43.333%{opacity:1}}
-@media(prefers-reduced-motion:reduce){.cycle-stage{display:none}.stage-static{display:block;opacity:1}.welding-effects{opacity:0}.assembly-supports,.assembly-table,.assembly-posts,.assembly-rails,.weld-head{transform:none;opacity:1}}
